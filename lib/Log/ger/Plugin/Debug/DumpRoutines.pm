@@ -7,7 +7,7 @@ package Log::ger::Plugin::Debug::DumpRoutines;
 
 use strict;
 use warnings;
-use Data::Dump;
+use Data::Dump::Color;
 
 sub get_hooks {
     my %conf = @_;
@@ -19,7 +19,7 @@ sub get_hooks {
             sub {        # hook
                 my %hook_args = @_;
 
-                dump $hook_args{routines};
+                dd $hook_args{routines};
                 [undef];
             },
         ],
